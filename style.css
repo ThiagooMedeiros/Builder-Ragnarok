@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+
+  box-sizing: border-box;
 }
 
 body {
@@ -21,4 +23,13 @@ body *,
   font-style: normal;
 
   line-height: 160%;
+}
+
+header {
+  padding-top: 2rem; /*32px*/
+  text-align: center;
+}
+
+header img {
+  width: 20rem;
 }
