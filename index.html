@@ -27,19 +27,29 @@
             jogo!
           </p>
 
-          <form action="#">
-            <input type="password" placeholder="API KEY do Gemini" />
+          <form id="form" action="#">
+            <input
+              id="apiKey"
+              type="password"
+              placeholder="API KEY do Gemini"
+            />
 
-            <select name="" id="">
+            <select name="" id="gameSelect">
               <option value="">Selecione um jogo</option>
               <option value="ragnarok">Ragnarok</option>
               <option value="lol">League of Legends</option>
               <option value="valorant">Valorant</option>
             </select>
 
-            <input type="text" placeholder="Melhor build para sicário..." />
+            <input
+              id="questionInput"
+              type="text"
+              placeholder="Melhor build para sicário..."
+            />
 
-            <button class="button" role="button">Perguntar</button>
+            <button id="askButton" class="button" role="button">
+              Perguntar
+            </button>
           </form>
 
           <div id="aiResponse">
@@ -48,5 +58,7 @@
         </div>
       </section>
     </main>
+
+    <script src="./script.js"></script>
   </body>
 </html>
