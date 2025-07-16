@@ -7,6 +7,8 @@ const askButton = document.getElementById("askButton");
 
 const aiResponse = document.getElementById("aiResponse");
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-});
+const submitForm = (event) => {
+  envet.preventDefault();
+};
+
+form.addEventListener("submit", submitForm);
