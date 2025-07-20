@@ -8,7 +8,16 @@ const askButton = document.getElementById("askButton");
 const aiResponse = document.getElementById("aiResponse");
 
 const submitForm = (event) => {
-  envet.preventDefault();
+  event.preventDefault();
+
+  const apiKey = apiKeyInput.value;
+  const game = gameSelect.value;
+  const question = questionInput.value;
+
+  console.log({ apiKey, game, question });
+
+  if (apiKey == "" || game == "" || question == "") {
+  }
 };
 
 form.addEventListener("submit", submitForm);
