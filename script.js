@@ -17,7 +17,13 @@ const submitForm = (event) => {
   console.log({ apiKey, game, question });
 
   if (apiKey == "" || game == "" || question == "") {
+    alert("Preencha todos os campos");
+    return;
   }
+
+  askButton.disabled = true;
+  askButton.textContent = "Perguntando...";
+  askButton.classList.add("loading");
 };
 
 form.addEventListener("submit", submitForm);

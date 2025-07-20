@@ -141,3 +141,17 @@ form button {
     padding: 0.25em 0.75em;
   }
 }
+
+.button:disabled {
+  cursor: not-allowed;
+}
+
+.loading {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
