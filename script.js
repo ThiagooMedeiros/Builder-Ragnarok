@@ -24,6 +24,15 @@ const submitForm = (event) => {
   askButton.disabled = true;
   askButton.textContent = "Perguntando...";
   askButton.classList.add("loading");
+
+  try {
+  } catch (error) {
+    console.log("Erro: ", error);
+  } finally {
+    askButton.disabled = false;
+    askButton.textContent = "Perguntar";
+    askButton.classList.remove("loading");
+  }
 };
 
 form.addEventListener("submit", submitForm);
