@@ -7,6 +7,11 @@ const askButton = document.getElementById("askButton");
 
 const aiResponse = document.getElementById("aiResponse");
 
+const askAI = async (question, game, apiKey) => {
+  const model = "gemini-2.0-flash";
+  const geminiURL = ``;
+};
+
 const submitForm = (event) => {
   event.preventDefault();
 
@@ -26,6 +31,8 @@ const submitForm = (event) => {
   askButton.classList.add("loading");
 
   try {
+    // perguntar para ia
+    askAI(question, game, apiKey);
   } catch (error) {
     console.log("Erro: ", error);
   } finally {
