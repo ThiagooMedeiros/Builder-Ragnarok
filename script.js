@@ -7,6 +7,12 @@ const askButton = document.getElementById("askButton");
 
 const aiResponse = document.getElementById("aiResponse");
 
+const markdownToHTML = (text) => {
+  const converter = new showdown.Converter();
+
+  return converter.makeHtml(text);
+};
+
 const askAI = async (question, game, apiKey) => {
   const model = "gemini-2.5-flash";
   const geminiURL = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
@@ -62,7 +68,8 @@ const submitForm = async (event) => {
     // perguntar para ia
     const text = await askAI(question, game, apiKey);
 
-    aiResponse.querySelector(".response-content").innerHTML = text;
+    aiResponse.querySelector(".response-content").innerHTML =
+      markdownToHTML(text);
   } catch (error) {
     console.log("Erro: ", error);
   } finally {
