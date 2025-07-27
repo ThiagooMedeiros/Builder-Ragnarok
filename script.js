@@ -12,7 +12,7 @@ const askAI = async (question, game, apiKey) => {
   const geminiURL = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
   const pergunta = ` 
-  Olha, tenho esse jogo ${game} e queria saber o ${question}
+  Olha, tenho esse jogo ${game} e queria saber de forma resumida ${question}
   `;
 
   const contents = [
@@ -39,9 +39,7 @@ const askAI = async (question, game, apiKey) => {
 
   const data = await response.json();
 
-  console.log({ data });
-
-  return;
+  return data.candidates[0].content.parts[0].text;
 };
 
 const submitForm = async (event) => {
@@ -62,7 +60,9 @@ const submitForm = async (event) => {
 
   try {
     // perguntar para ia
-    await askAI(question, game, apiKey);
+    const text = await askAI(question, game, apiKey);
+
+    aiResponse.querySelector(".response-content").innerHTML = text;
   } catch (error) {
     console.log("Erro: ", error);
   } finally {
